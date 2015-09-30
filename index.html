@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crops Water Stress and Phtosynthesis</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Crops Water Stress and Phtosynthesis">
+  <meta name="author" content="Larry Lugo, M.Sc.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Crops Water Stress and Phtosynthesis</h1>
+    <h2>Linear Regression, Correlation and Report App</h2>
+    <p>Larry Lugo, M.Sc.<br/>Aggregate Professor</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h3>About the App</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>Welcome! This application (app) was developed to query databases on several Crops Water Stress and how it affects their yield, and Photosynthesis worldwide. Information like these are scattered, not easy to find, often their quality is questionable and is not available online. Instead, you must download and use locally.</p>
+
+<p>For those reasons, thanks to this application you can:</p>
+
+<ul>
+<li>Check high quality data sets interactively online.</li>
+<li>Conduct an analysis of correlation between all the variables included.</li>
+<li>Perform a linear regression between the dependent and independent variables, according to user interest.</li>
+<li>Plot the regression model and the results of the analysis.</li>
+<li>Configure a report with the information of interest, the name of user and a brief analysis, in the desired downloadable format.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h3>Using the App</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>It&#39;s very easy! See the app online <a href="https://larrylugo.shinyapps.io/DevDataProdProjectFinal">here</a>. On Side Menu choose a data set, Dependent and Independent Variable:</br></p>
+
+<div style='text-align: center;'>
+    <img height='220' width='200' src='./assets/img/fig02.png'/>
+</div></br>
+Then On Main Menu, see output on each corresponding Tab:</br></br>
+<div style='text-align: center;'>
+    <img height='144' width='609' src='./assets/img/fig01.png'/>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h3>A Plotting Example</h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(car)
+photo &lt;- read.csv(file=&quot;./assets/data/Leaf_Photosynthesis_Traits.csv&quot;, header=TRUE, sep=&quot;,&quot;)
+scatterplot(Vcmax_reported ~ Irradiance, data=photo, 
+   xlab=&quot;Irradiance&quot;, ylab=&quot;Vcmax Reported&quot;, 
+   main=&quot;Vcmax Reported vs. Irradiance&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h3>Data Sources</h3>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Crops water stress: <a href="http://wri.org/publication/aqueduct-metadata-global">http://wri.org/publication/aqueduct-metadata-global</a></li>
+<li>Photosynthesis: <a href="https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=1224">https://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=1224</a></li>
+</ul>
+
+<h3>References</h3>
+
+<p>Gassert, F., M. Luck, M. Landis, P. Reig, and T. Shiao. 2013. &quot;Aqueduct Global Maps 2.0.&quot; Working Paper. Washington, DC: World Resources Institute. Available online at <a href="http://wri.org/publication/aqueduct-metadata-global">http://wri.org/publication/aqueduct-metadata-global</a>.</p>
+
+<p>Walker, A.P., I. Aranda, A.P. Beckerman, H. Bown, L.A. Cernusak, Q.L. Dang, T.F. Domingues, L. Gu, S. Guo, Q. Han, J. Kattge, M. Kubiske, D. Manter, E. Merilo, G. Midgley, A. Porte, J.C. Scales, D. Tissue, T. Turnbull, C. Warren, G. Wohlfahrt, F.I. Woodward, and S.D. Wullschleger. 2014. A Global Data Set of Leaf Photosynthetic Rates, Leaf N and P, and Specific Leaf Area. Data set. Available on-line [<a href="http://daac.ornl.gov">http://daac.ornl.gov</a>] from Oak Ridge National Laboratory Distributed Active Archive Center, Oak Ridge, Tennessee, USA. <a href="http://dx.doi.org/10.3334/ORNLDAAC/1224">http://dx.doi.org/10.3334/ORNLDAAC/1224</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='About the App'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Using the App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='A Plotting Example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Data Sources'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
